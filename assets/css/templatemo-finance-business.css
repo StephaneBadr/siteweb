@@ -274,7 +274,7 @@ header .navbar {
 }
 .navbar .navbar-brand h2 {
 	color: #fff;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	font-size: 24px;
 	font-weight: 700;
 	-webkit-transition: all .3s ease 0s;
@@ -387,7 +387,7 @@ header .navbar {
 }
 
 .Modern-Slider .item-1 .img-fill {
-	background-image: url(../images/slide_01.jpg);
+	background-image: url(../images/drone.jpeg);
 }
 
 .Modern-Slider .item-2 .img-fill {
