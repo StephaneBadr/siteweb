@@ -108,19 +108,24 @@ jQuery( document ).ready(function( $ ) {
             nextArrow:'<button class="NextArrow"></button>', 
         });
 
-        function visible(partial) {
-            var $t = partial,
-                $w = jQuery(window),
-                viewTop = $w.scrollTop(),
-                viewBottom = viewTop + $w.height(),
-                _top = $t.offset().top,
-                _bottom = _top + $t.height(),
-                compareTop = partial === true ? _bottom : _top,
-                compareBottom = partial === true ? _top : _bottom;
-
-            return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
-
-        }
+		function visible(partial) {
+	    var $t = partial,
+	        $w = jQuery(window),
+	        viewTop = $w.scrollTop(),
+	        viewBottom = viewTop + $w.height();
+	    
+	    // Vérification si l'élément existe et a un offset
+	    if (!$t.length || !$t.offset()) {
+	        return false;
+	    }
+	    
+	    var _top = $t.offset().top,
+	        _bottom = _top + $t.height(),
+	        compareTop = partial === true ? _bottom : _top,
+	        compareBottom = partial === true ? _top : _bottom;
+	
+	    return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
+	}
 
         $(window).scroll(function(){
 
